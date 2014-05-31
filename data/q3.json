@@ -1,0 +1,1482 @@
+{
+    "day": 3,
+    "events": 64,
+    "type": "Qualifications",
+    "data": {
+        "womens": {
+            "singles": {
+                "round": "Round 1",
+                "matches": [
+                    {
+                        "court": "Court 2",
+                        "winner": {
+                            "name": "T.Paszek",
+                            "country": "AUT"
+                        },
+                        "loser": {
+                            "name": "A.Mitu",
+                            "country": "ROU"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 2",
+                        "winner": {
+                            "name": "G.Dabrowski",
+                            "country": "CAN"
+                        },
+                        "loser": {
+                            "name": "V.Cepede Royg",
+                            "country": "PAR"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 3",
+                        "winner": {
+                            "name": "A.Vasylyeva",
+                            "country": "UKR"
+                        },
+                        "loser": {
+                            "name": "K.Pliskova",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "7",
+                                "5"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 3",
+                        "winner": {
+                            "name": "Y.Putintseva",
+                            "country": "KAZ"
+                        },
+                        "loser": {
+                            "name": "M.Duque-Marino",
+                            "country": "COL"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 6",
+                        "winner": {
+                            "name": "I.Pavlovic",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "M.Sirotkina",
+                            "country": "RUS"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "1",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 6",
+                        "winner": {
+                            "name": "K.Kozlova",
+                            "country": "UKR"
+                        },
+                        "loser": {
+                            "name": "E.Cascino",
+                            "country": "FRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 7",
+                        "winner": {
+                            "name": "A.Kontaveit",
+                            "country": "EST"
+                        },
+                        "loser": {
+                            "name": "C.Sibille",
+                            "country": "FRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 7",
+                        "winner": {
+                            "name": "M.Oudin",
+                            "country": "USA"
+                        },
+                        "loser": {
+                            "name": "M.Arcangioli",
+                            "country": "FRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 8",
+                        "winner": {
+                            "name": "A.Dulgheru",
+                            "country": "ROU"
+                        },
+                        "loser": {
+                            "name": "L.Arruabarrena",
+                            "country": "ESP"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6(3)",
+                                "7(7)"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 8",
+                        "winner": {
+                            "name": "K.Bertens",
+                            "country": "NED"
+                        },
+                        "loser": {
+                            "name": "L.Hradecka",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "1"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 8",
+                        "winner": {
+                            "name": "D.Kovinic",
+                            "country": "MNE"
+                        },
+                        "loser": {
+                            "name": "A.Konjuh",
+                            "country": "CRO"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 9",
+                        "winner": {
+                            "name": "I.Begu",
+                            "country": "ROU"
+                        },
+                        "loser": {
+                            "name": "M.Eguchi",
+                            "country": "JPN"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 9",
+                        "winner": {
+                            "name": "E.Hozumi",
+                            "country": "JPN"
+                        },
+                        "loser": {
+                            "name": "V.Golubic",
+                            "country": "SUI"
+                        },
+                        "sets": [
+                            [
+                                "1",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 10",
+                        "winner": {
+                            "name": "K.Siniakova",
+                            "country": "CZE"
+                        },
+                        "loser": {
+                            "name": "T.Majeric",
+                            "country": "SLO"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 10",
+                        "winner": {
+                            "name": "A.Morita",
+                            "country": "JPN"
+                        },
+                        "loser": {
+                            "name": "F.Molinero",
+                            "country": "ARG"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 11",
+                        "winner": {
+                            "name": "A.Krunic",
+                            "country": "SRB"
+                        },
+                        "loser": {
+                            "name": "S.Sanders",
+                            "country": "AUS"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 11",
+                        "winner": {
+                            "name": "A.Kiick",
+                            "country": "USA"
+                        },
+                        "loser": {
+                            "name": "P.Vinogradova",
+                            "country": "RUS"
+                        },
+                        "sets": [
+                            [
+                                "1",
+                                "6"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 12",
+                        "winner": {
+                            "name": "C.Witthoeft",
+                            "country": "GER"
+                        },
+                        "loser": {
+                            "name": "R.Ozaki",
+                            "country": "JPN"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "7(7)",
+                                "6(5)"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 12",
+                        "winner": {
+                            "name": "G.Min",
+                            "country": "USA"
+                        },
+                        "loser": {
+                            "name": "E.Birnerova",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 12",
+                        "winner": {
+                            "name": "M.Zanevska",
+                            "country": "UKR"
+                        },
+                        "loser": {
+                            "name": "S.Zheng",
+                            "country": "CHN"
+                        },
+                        "sets": [
+                            [
+                                "5",
+                                "7"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 14",
+                        "winner": {
+                            "name": "T.Bacsinszky",
+                            "country": "SUI"
+                        },
+                        "loser": {
+                            "name": "R.Hogenkamp",
+                            "country": "NED"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 14",
+                        "winner": {
+                            "name": "S.Shapatava",
+                            "country": "GEO"
+                        },
+                        "loser": {
+                            "name": "A.Kudryavtseva",
+                            "country": "RUS"
+                        },
+                        "sets": [
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 14",
+                        "winner": {
+                            "name": "T.Smitkova",
+                            "country": "CZE"
+                        },
+                        "loser": {
+                            "name": "A.Medina Garrigues",
+                            "country": "ESP"
+                        },
+                        "sets": [
+                            [
+                                "7",
+                                "5"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 15",
+                        "winner": {
+                            "name": "A.Rus",
+                            "country": "NED"
+                        },
+                        "loser": {
+                            "name": "L.Kichenok",
+                            "country": "UKR"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 15",
+                        "winner": {
+                            "name": "L.Tsurenko",
+                            "country": "UKR"
+                        },
+                        "loser": {
+                            "name": "S.Arvidsson",
+                            "country": "SWE"
+                        },
+                        "sets": [
+                            [
+                                "2",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 16",
+                        "winner": {
+                            "name": "H.Watson",
+                            "country": "GBR"
+                        },
+                        "loser": {
+                            "name": "I.Falconi",
+                            "country": "USA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 16",
+                        "winner": {
+                            "name": "J.Konta",
+                            "country": "GBR"
+                        },
+                        "loser": {
+                            "name": "P.Kania",
+                            "country": "POL"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "2",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 17",
+                        "winner": {
+                            "name": "M.Georges",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "R.Voracova",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "5",
+                                "7"
+                            ],
+                            [
+                                "8",
+                                "6"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 17",
+                        "winner": {
+                            "name": "I.Ramialison",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "K.Kucova",
+                            "country": "SVK"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "1"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 17",
+                        "winner": {
+                            "name": "Y.Beygelzimer",
+                            "country": "UKR"
+                        },
+                        "loser": {
+                            "name": "A.Panova",
+                            "country": "RUS"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "7(10)",
+                                "6(8)"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 18",
+                        "winner": {
+                            "name": "L.Siegemund",
+                            "country": "GER"
+                        },
+                        "loser": {
+                            "name": "A.Hlavackova",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 18",
+                        "winner": {
+                            "name": "M.Larcher De Brito",
+                            "country": "POR"
+                        },
+                        "loser": {
+                            "name": "A.Sasnovich",
+                            "country": "BLR"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 18",
+                        "winner": {
+                            "name": "T.Babos",
+                            "country": "HUN"
+                        },
+                        "loser": {
+                            "name": "I.De Vroome",
+                            "country": "NED"
+                        },
+                        "sets": [
+                            [
+                                "7(8)",
+                                "6(6)"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "doubles": {
+                "round": ""
+            }
+        },
+        "mens": {
+            "singles": {
+                "round": "Round 2",
+                "matches": [
+                    {
+                        "court": "Court 2",
+                        "winner": {
+                            "name": "G.Elias",
+                            "country": "POR"
+                        },
+                        "loser": {
+                            "name": "U.Ignatik",
+                            "country": "BLR"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "0"
+                            ],
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 2",
+                        "winner": {
+                            "name": "F.Krajinovic",
+                            "country": "SRB"
+                        },
+                        "loser": {
+                            "name": "L.Giustino",
+                            "country": "ITA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 3",
+                        "winner": {
+                            "name": "Ds.Schwartzman",
+                            "country": "ARG"
+                        },
+                        "loser": {
+                            "name": "M.Alund",
+                            "country": "ARG"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 3",
+                        "winner": {
+                            "name": "P.Starace",
+                            "country": "ITA"
+                        },
+                        "loser": {
+                            "name": "G.Andreozzi",
+                            "country": "ARG"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 3",
+                        "winner": {
+                            "name": "F.Dancevic",
+                            "country": "CAN"
+                        },
+                        "loser": {
+                            "name": "K.Mesaros",
+                            "country": "CRO"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 6",
+                        "winner": {
+                            "name": "S.Bolelli",
+                            "country": "ITA"
+                        },
+                        "loser": {
+                            "name": "P.Gojowczyk",
+                            "country": "GER"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "4",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 6",
+                        "winner": {
+                            "name": "L.Lokoli",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "E.Donskoy",
+                            "country": "RUS"
+                        },
+                        "sets": [
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "7(7)",
+                                "6(1)"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 6",
+                        "winner": {
+                            "name": "E.Prodon",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "G.Melzer",
+                            "country": "AUT"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ],
+                            [
+                                "1(3)",
+                                "1(1)"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 7",
+                        "winner": {
+                            "name": "A.Beck",
+                            "country": "GER"
+                        },
+                        "loser": {
+                            "name": "M.Gicquel",
+                            "country": "FRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 7",
+                        "winner": {
+                            "name": "J.Eysseric",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "J.Reister",
+                            "country": "GER"
+                        },
+                        "sets": [
+                            [
+                                "6(5)",
+                                "7(7)"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "8",
+                                "6"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 8",
+                        "winner": {
+                            "name": "S.Groth",
+                            "country": "AUS"
+                        },
+                        "loser": {
+                            "name": "M.Authom",
+                            "country": "BEL"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "3",
+                                "0"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 8",
+                        "winner": {
+                            "name": "R.Berankis",
+                            "country": "LTU"
+                        },
+                        "loser": {
+                            "name": "T.Puetz",
+                            "country": "GER"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 9",
+                        "winner": {
+                            "name": "A.Pavic",
+                            "country": "CRO"
+                        },
+                        "loser": {
+                            "name": "M.Copil",
+                            "country": "ROU"
+                        },
+                        "sets": [
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 9",
+                        "winner": {
+                            "name": "P.Polansky",
+                            "country": "CAN"
+                        },
+                        "loser": {
+                            "name": "J.Mertl",
+                            "country": "CZE"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "2",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 10",
+                        "winner": {
+                            "name": "T.Kokkinakis",
+                            "country": "AUS"
+                        },
+                        "loser": {
+                            "name": "N.Desein",
+                            "country": "BEL"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 10",
+                        "winner": {
+                            "name": "M.Mecir",
+                            "country": "SVK"
+                        },
+                        "loser": {
+                            "name": "M.Ilhan",
+                            "country": "TUR"
+                        },
+                        "sets": [
+                            [
+                                "7(7)",
+                                "6(4)"
+                            ],
+                            [
+                                "2",
+                                "6"
+                            ],
+                            [
+                                "1(1)",
+                                "9"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 11",
+                        "winner": {
+                            "name": "F.Bagnis",
+                            "country": "ARG"
+                        },
+                        "loser": {
+                            "name": "R.Dutra Silva",
+                            "country": "BRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6(3)",
+                                "7(7)"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 11",
+                        "winner": {
+                            "name": "J.Duckworth",
+                            "country": "AUS"
+                        },
+                        "loser": {
+                            "name": "B.Kavcic",
+                            "country": "SLO"
+                        },
+                        "sets": [
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "7",
+                                "5"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 12",
+                        "winner": {
+                            "name": "A.Molteni",
+                            "country": "ARG"
+                        },
+                        "loser": {
+                            "name": "E.Gomez",
+                            "country": "ECU"
+                        },
+                        "sets": [
+                            [
+                                "7(7)",
+                                "6(3)"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 12",
+                        "winner": {
+                            "name": "J.McGee",
+                            "country": "IRL"
+                        },
+                        "loser": {
+                            "name": "G.Pella",
+                            "country": "ARG"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 14",
+                        "winner": {
+                            "name": "J.Huta Galung",
+                            "country": "NED"
+                        },
+                        "loser": {
+                            "name": "M.Jaziri",
+                            "country": "TUN"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 14",
+                        "winner": {
+                            "name": "A.Ghem",
+                            "country": "BRA"
+                        },
+                        "loser": {
+                            "name": "M.Berrer",
+                            "country": "GER"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "7(9)",
+                                "6(7)"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 15",
+                        "winner": {
+                            "name": "A.Kuznetsov",
+                            "country": "RUS"
+                        },
+                        "loser": {
+                            "name": "A.Martin",
+                            "country": "SVK"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 15",
+                        "winner": {
+                            "name": "D.Dzumhur",
+                            "country": "BIH"
+                        },
+                        "loser": {
+                            "name": "H.Podlipnik-Castillo",
+                            "country": "CHI"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 15",
+                        "winner": {
+                            "name": "A.Haider-Maurer",
+                            "country": "AUT"
+                        },
+                        "loser": {
+                            "name": "M.Cecchinato",
+                            "country": "ITA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "3"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 16",
+                        "winner": {
+                            "name": "K.Coppejans",
+                            "country": "BEL"
+                        },
+                        "loser": {
+                            "name": "R.Bemelmans",
+                            "country": "BEL"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 16",
+                        "winner": {
+                            "name": "M.Bourgue",
+                            "country": "FRA"
+                        },
+                        "loser": {
+                            "name": "S.Diez",
+                            "country": "CAN"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "3"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 16",
+                        "winner": {
+                            "name": "A.Arnaboldi",
+                            "country": "ITA"
+                        },
+                        "loser": {
+                            "name": "H.Zeballos",
+                            "country": "ARG"
+                        },
+                        "sets": [
+                            [
+                                "4",
+                                "6"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ],
+                            [
+                                "6",
+                                "1"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 17",
+                        "winner": {
+                            "name": "J.Ward",
+                            "country": "GBR"
+                        },
+                        "loser": {
+                            "name": "R.Harrison",
+                            "country": "USA"
+                        },
+                        "sets": [
+                            [
+                                "7(7)",
+                                "6(5)"
+                            ],
+                            [
+                                "7(7)",
+                                "6(4)"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 17",
+                        "winner": {
+                            "name": "T.Smyczek",
+                            "country": "USA"
+                        },
+                        "loser": {
+                            "name": "T.Lamasine",
+                            "country": "FRA"
+                        },
+                        "sets": [
+                            [
+                                "6",
+                                "2"
+                            ],
+                            [
+                                "6",
+                                "4"
+                            ]
+                        ]
+                    },
+                    {
+                        "court": "Court 18",
+                        "winner": {
+                            "name": "B.Rola",
+                            "country": "SLO"
+                        },
+                        "loser": {
+                            "name": "I.Cervantes",
+                            "country": "ESP"
+                        },
+                        "sets": [
+                            [
+                                "3",
+                                "6"
+                            ],
+                            [
+                                "7(7)",
+                                "6(5)"
+                            ],
+                            [
+                                "6",
+                                "2"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "doubles": {
+                "round": ""
+            }
+        },
+        "mixed": {
+            "round": ""
+        }
+    }
+}
