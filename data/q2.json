@@ -8,6 +8,7 @@
                 "round": "Round 1",
                 "matches": [
                     {
+                        "status": "Completed",
                         "court": "Court 2",
                         "winner": {
                             "name": "M.Zanevska",
@@ -29,6 +30,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 2",
                         "winner": {
                             "name": "K.Pervak",
@@ -54,6 +56,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 3",
                         "winner": {
                             "name": "T.Smitkova",
@@ -75,6 +78,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 3",
                         "winner": {
                             "name": "S.Karatantcheva",
@@ -100,6 +104,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 6",
                         "winner": {
                             "name": "A.Medina Garrigues",
@@ -125,6 +130,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 7",
                         "winner": {
                             "name": "D.Kovinic",
@@ -150,6 +156,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 8",
                         "winner": {
                             "name": "P.Kania",
@@ -175,6 +182,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 9",
                         "winner": {
                             "name": "A.Brianti",
@@ -200,6 +208,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 9",
                         "winner": {
                             "name": "O.Rogowska",
@@ -221,6 +230,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 10",
                         "winner": {
                             "name": "J.Konta",
@@ -242,6 +252,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 10",
                         "winner": {
                             "name": "V.Dolonc",
@@ -263,6 +274,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 11",
                         "winner": {
                             "name": "A.Konjuh",
@@ -284,6 +296,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 11",
                         "winner": {
                             "name": "J.Gajdosova",
@@ -305,6 +318,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 12",
                         "winner": {
                             "name": "I.De Vroome",
@@ -326,6 +340,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 12",
                         "winner": {
                             "name": "A.Wozniak",
@@ -347,6 +362,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 14",
                         "winner": {
                             "name": "A.Panova",
@@ -372,6 +388,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 15",
                         "winner": {
                             "name": "T.Babos",
@@ -393,6 +410,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 16",
                         "winner": {
                             "name": "S.Zheng",
@@ -418,6 +436,7 @@
                         ]
                     },
                     {
+                        "status": "Retired",
                         "court": "Court 17",
                         "winner": {
                             "name": "Y.Beygelzimer",
@@ -430,6 +449,7 @@
                         "sets": []
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 17",
                         "winner": {
                             "name": "O.Savchuk",
@@ -451,6 +471,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 18",
                         "winner": {
                             "name": "C.Buyukakcay",
@@ -486,6 +507,7 @@
                 "round": "Round 1",
                 "matches": [
                     {
+                        "status": "Retired",
                         "court": "Court 2",
                         "winner": {
                             "name": "K.Mesaros",
@@ -503,6 +525,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 3",
                         "winner": {
                             "name": "R.Berankis",
@@ -528,6 +551,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 6",
                         "winner": {
                             "name": "F.Krajinovic",
@@ -553,6 +577,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 7",
                         "winner": {
                             "name": "J.Mertl",
@@ -574,6 +599,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 7",
                         "winner": {
                             "name": "A.Arnaboldi",
@@ -595,6 +621,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 8",
                         "winner": {
                             "name": "E.Prodon",
@@ -616,6 +643,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 9",
                         "winner": {
                             "name": "M.Ilhan",
@@ -641,6 +669,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 9",
                         "winner": {
                             "name": "M.Gonzalez",
@@ -662,6 +691,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 10",
                         "winner": {
                             "name": "P.Starace",
@@ -683,6 +713,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 11",
                         "winner": {
                             "name": "G.Andreozzi",
@@ -704,6 +735,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 12",
                         "winner": {
                             "name": "B.Kavcic",
@@ -729,6 +761,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 14",
                         "winner": {
                             "name": "F.Dancevic",
@@ -750,6 +783,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 15",
                         "winner": {
                             "name": "G.Pella",
@@ -775,6 +809,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 16",
                         "winner": {
                             "name": "P.Lorenzi",
@@ -796,6 +831,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 17",
                         "winner": {
                             "name": "H.Zeballos",
@@ -817,6 +853,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 18",
                         "winner": {
                             "name": "J.Duckworth",

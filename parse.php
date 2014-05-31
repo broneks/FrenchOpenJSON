@@ -1,6 +1,6 @@
 <?php
 
-$day = 6;
+$day = 7;
 
 $doc = new DOMDocument();
 @$doc->loadHTMLFile('http://www.rolandgarros.com/en_FR/scores/completed_matches/day' . ($day + 5) . '.html');
@@ -102,6 +102,7 @@ foreach ($tables as $node) {
 	switch ($type) {
 		case 'singles':
 			$obj['data'][$gender][$type]['matches'][] = array(
+				'status' => $s['status'],
 				'court'  => $s['court'],
 				'winner' => $s['winner'],
 				'loser'  => $s['loser'],
@@ -111,25 +112,29 @@ foreach ($tables as $node) {
 
 		case 'doubles':
 			$obj['data'][$gender][$type]['matches'][] = array(
-				'court' => $d['court'],
+				'status'  => $d['status'],
+				'court'   => $d['court'],
 				'winners' => $d['winners'],
 				'losers'  => $d['losers'],
-				'sets'   => $d['sets']
+				'sets'    => $d['sets']
 			);
 			break;
 
 		case 'mixed':
 			$obj['data']['mixed']['matches'][] = array(
-				'court' => $m['court'],
+				'status'  => $m['status'],
+				'court'   => $m['court'],
 				'winners' => $m['winners'],
 				'losers'  => $m['losers'],
-				'sets'   => $m['sets']
+				'sets'    => $m['sets']
 			);
 			break;
 	}
 }
 
 function getSingle($node) {
+	$trimmedStatus = trim($node->childNodes->item(3)->childNodes->item(1)->textContent, chr(0xC2).chr(0xA0));
+	$status  = ($trimmedStatus) ? $trimmedStatus : 'Completed';
 	$court   = $node->childNodes->item(1)->textContent;
 	$sets    = array();
 	$player1 = $node->childNodes->item(3)->firstChild->childNodes;
@@ -171,18 +176,19 @@ function getSingle($node) {
 		
 		if (isset($p1win)) {
 			$sets[] = array(
-				(int) (strlen($p1score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p1score, 0, 1) . '(' . substr($p1score, 1) . ')' : $p1score,
-				(int) (strlen($p2score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p2score, 0, 1) . '(' . substr($p2score, 1) . ')' : $p2score
+				(strlen($p1score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p1score, 0, 1) . '(' . substr($p1score, 1) . ')' : $p1score,
+				(strlen($p2score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p2score, 0, 1) . '(' . substr($p2score, 1) . ')' : $p2score
 			);
 		} else {
 			$sets[] = array(
-				(int) (strlen($p2score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p2score, 0, 1) . '(' . substr($p2score, 1) . ')' : $p2score,
-				(int) (strlen($p1score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p1score, 0, 1) . '(' . substr($p1score, 1) . ')' : $p1score
+				(strlen($p2score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p2score, 0, 1) . '(' . substr($p2score, 1) . ')' : $p2score,
+				(strlen($p1score) > 1 && substr($p1score, 0, 1) !== '[') ? substr($p1score, 0, 1) . '(' . substr($p1score, 1) . ')' : $p1score
 			);
 		}
 	}
 
 	return array(
+		'status' => $status,
 		'court'  => $court,
 		'winner' => $winner, 
 		'loser'  => $loser,
@@ -191,6 +197,8 @@ function getSingle($node) {
 }
 
 function getDouble($node) {
+	$trimmedStatus = trim($node->childNodes->item(3)->childNodes->item(1)->textContent, chr(0xC2).chr(0xA0));
+	$status  = ($trimmedStatus) ? $trimmedStatus : 'Completed';
 	$court  = $node->childNodes->item(1)->textContent;
 	$sets   = array();
 	$team1 = $node->childNodes->item(3)->firstChild->childNodes;
@@ -255,20 +263,21 @@ function getDouble($node) {
 		
 		if (isset($t1win)) {
 			$sets[] = array(
-				(int) (strlen($t1score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t1score, 0, 1) . '(' . substr($t1score, 1) . ')' : $t1score,
-				(int) (strlen($t2score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t2score, 0, 1) . '(' . substr($t2score, 1) . ')' : $t2score
+				(strlen($t1score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t1score, 0, 1) . '(' . substr($t1score, 1) . ')' : $t1score,
+				(strlen($t2score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t2score, 0, 1) . '(' . substr($t2score, 1) . ')' : $t2score
 			);
 		} 
 		else {
 			$sets[] = array(
-				(int) (strlen($t2score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t2score, 0, 1) . '(' . substr($t2score, 1) . ')' : $t2score,
-				(int) (strlen($t1score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t1score, 0, 1) . '(' . substr($t1score, 1) . ')' : $t1score
+				(strlen($t2score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t2score, 0, 1) . '(' . substr($t2score, 1) . ')' : $t2score,
+				(strlen($t1score) > 1 && substr($t1score, 0, 1) !== '[') ? substr($t1score, 0, 1) . '(' . substr($t1score, 1) . ')' : $t1score
 			);
 		}
 	}
 
 	return array(
-		'court'   => $court,
+		'status'  => $status,
+ 		'court'   => $court,
 		'winners' => $winners, 
 		'losers'  => $losers,
 		'sets'    => $sets

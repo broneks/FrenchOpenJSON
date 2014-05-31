@@ -8,6 +8,7 @@
                 "round": "Round 3",
                 "matches": [
                     {
+                        "status": "Completed",
                         "court": "Court 6",
                         "winner": {
                             "name": "G.Min",
@@ -29,6 +30,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 8",
                         "winner": {
                             "name": "K.Bertens",
@@ -50,6 +52,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 9",
                         "winner": {
                             "name": "A.Wozniak",
@@ -71,6 +74,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 10",
                         "winner": {
                             "name": "M.Larcher De Brito",
@@ -92,6 +96,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 11",
                         "winner": {
                             "name": "S.Shapatava",
@@ -117,6 +122,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 14",
                         "winner": {
                             "name": "T.Paszek",
@@ -138,6 +144,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 15",
                         "winner": {
                             "name": "K.Pervak",
@@ -163,6 +170,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 16",
                         "winner": {
                             "name": "T.Bacsinszky",
@@ -188,6 +196,7 @@
                         ]
                     },
                     {
+                        "status": "Completed",
                         "court": "Court 17",
                         "winner": {
                             "name": "H.Watson",
@@ -219,6 +228,7 @@
                 "round": "Round 3",
                 "matches": [
                     {
+                        "status": "Completed",
                         "court": "Court 7",
                         "winner": {
                             "name": "P.Lorenzi",
