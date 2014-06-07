@@ -1,6 +1,6 @@
 <?php
 
-$day = 9;
+$day = 13;
 
 $doc = new DOMDocument();
 @$doc->loadHTMLFile('http://www.rolandgarros.com/en_FR/scores/completed_matches/day' . ($day + 5) . '.html');
@@ -25,9 +25,11 @@ $obj = array();
 foreach ($events as $event) {
 	if (!$type && (strpos($event->textContent, 'Qualifications') !== false)) $type = 'Qualifications';
 
-	if (strpos($event->textContent, 'Women\'s')	!== false ||
-		strpos($event->textContent, 'Men\'s')	!== false ||
-		strpos($event->textContent, 'Mixed')	!== false) {
+	if (strpos($event->textContent, 'Women\'s Singles')	!== false ||
+		strpos($event->textContent, 'Women\'s Doubles')	!== false ||
+		strpos($event->textContent, 'Men\'s Singles')	!== false ||
+		strpos($event->textContent, 'Men\'s Doubles')	!== false ||
+		strpos($event->textContent, 'Mixed')			!== false) {
 		$count++;
 	}
 
@@ -53,7 +55,7 @@ foreach ($events as $event) {
 	}
 }
 
-$obj['day']    = (int) substr($doc->getElementsByTagName('h1')->item(0)->nodeValue, -1);
+$obj['day']    = $day;
 $obj['events'] = $count;
 $obj['type']   = ($type) ? $type : 'Tournament';
 
