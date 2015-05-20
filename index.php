@@ -43,27 +43,27 @@ $output = array();
 //
 
 foreach ($events as $event) {
-	if (!$eventType) {
-		$eventType = Parse::getEventType($event);
-	}
+  if (!$eventType) {
+    $eventType = Parse::getEventType($event);
+  }
 
-	$count = Parse::countEvents($count, $event);
+  $count = Parse::countEvents($count, $event);
 
-	if (!$womSinRound && (strpos($event->textContent, 'Women\'s Singles') !== false)) {
-		$womSinRound = Parse::getRound($event);
-	} 
-	else if (!$womDubRound && (strpos($event->textContent, 'Women\'s Doubles') !== false)) {
-		$womDubRound = Parse::getRound($event);
-	}
-	else if (!$menSinRound && (strpos($event->textContent, 'Men\'s Singles') !== false)) {
-		$menSinRound = Parse::getRound($event);
-	}
-	else if (!$menDubRound && (strpos($event->textContent, 'Men\'s Doubles') !== false)) {
-		$menDubRound = Parse::getRound($event);
-	}
-	else if (!$mixedRound && (strpos($event->textContent, 'Mixed') !== false)) {;
-		$mixedRound = Parse::getRound($event);
-	}
+  if (!$womSinRound && (strpos($event->textContent, 'Women\'s Singles') !== false)) {
+    $womSinRound = Parse::getRound($event);
+  } 
+  else if (!$womDubRound && (strpos($event->textContent, 'Women\'s Doubles') !== false)) {
+    $womDubRound = Parse::getRound($event);
+  }
+  else if (!$menSinRound && (strpos($event->textContent, 'Men\'s Singles') !== false)) {
+    $menSinRound = Parse::getRound($event);
+  }
+  else if (!$menDubRound && (strpos($event->textContent, 'Men\'s Doubles') !== false)) {
+    $menDubRound = Parse::getRound($event);
+  }
+  else if (!$mixedRound && (strpos($event->textContent, 'Mixed') !== false)) {;
+    $mixedRound = Parse::getRound($event);
+  }
 }
 
 //
@@ -75,69 +75,69 @@ $output['events'] = $count;
 $output['type']   = $eventType;
 
 $output['data'] = array(
-	'womens' => array(
-		'singles' => array(
-			'round' => $womSinRound
-		),
-		'doubles' => array(
-			'round' => $womDubRound
-		)
-	),
-	'mens' => array(
-		'singles' => array(
-			'round' => $menSinRound
-		),
-		'doubles' => array(
-			'round' => $menDubRound
-		)
-	),
-	'mixed' => array(
-		'round' => $mixedRound
+  'womens' => array(
+    'singles' => array(
+      'round' => $womSinRound
+    ),
+    'doubles' => array(
+      'round' => $womDubRound
+    )
+  ),
+  'mens' => array(
+    'singles' => array(
+      'round' => $menSinRound
+    ),
+    'doubles' => array(
+      'round' => $menDubRound
+    )
+  ),
+  'mixed' => array(
+    'round' => $mixedRound
   )
 );
 
 foreach ($tables as $table) {
-	$matchSummary = $table->firstChild->textContent;
+  $matchSummary = $table->firstChild->textContent;
 
-	if (Parse::isMatchType($matchSummary, 'womSin')) {
-		$gender    = 'womens';
-		$matchType = 'singles';
-		$match     = Parse::getSingle($table);
-	}  
-	else if (Parse::isMatchType($matchSummary, 'womDub')) {
-		$gender    = 'womens';
-		$matchType = 'doubles';
-		$match     = Parse::getDouble($table);
-	}  
-	else if (Parse::isMatchType($matchSummary, 'menSin')) {
-		$gender    = 'mens';
-		$matchType = 'singles';	
-		$match     = Parse::getSingle($table);
-	}  
-	else if (Parse::isMatchType($matchSummary, 'menDub')) {
-		$gender    = 'mens';
-		$matchType = 'doubles';
-		$match     = Parse::getDouble($table);
-	}  
-	else if (Parse::isMatchType($matchSummary, 'mixed')) {
-		$matchType = 'mixed';	
-		$match     = Parse::getDouble($table);
-	}
+  if (Parse::isMatchType($matchSummary, 'womSin')) {
+    $gender    = 'womens';
+    $matchType = 'singles';
+    $match     = Parse::getSingle($table);
+  }  
+  else if (Parse::isMatchType($matchSummary, 'womDub')) {
+    $gender    = 'womens';
+    $matchType = 'doubles';
+    $match     = Parse::getDouble($table);
+  }  
+  else if (Parse::isMatchType($matchSummary, 'menSin')) {
+    $gender    = 'mens';
+    $matchType = 'singles'; 
+    $match     = Parse::getSingle($table);
+  }  
+  else if (Parse::isMatchType($matchSummary, 'menDub')) {
+    $gender    = 'mens';
+    $matchType = 'doubles';
+    $match     = Parse::getDouble($table);
+  }  
+  else if (Parse::isMatchType($matchSummary, 'mixed')) {
+    $matchType = 'mixed'; 
+    $match     = Parse::getDouble($table);
+  }
 
-	$matchArray = array(
-		'status' => $match['status'],
-		'court'  => $match['court'],
-		'winner' => $match['winner'],
-		'loser'  => $match['loser'],
-		'sets'   => $match['sets']
-	);
+  $matchArray = array(
+    'status' => $match['status'],
+    'court'  => $match['court'],
+    'winner' => $match['winner'],
+    'loser'  => $match['loser'],
+    'sets'   => $match['sets']
+  );
 
-	if ($gender) {
-		$output['data'][$gender][$matchType]['matches'][] = $matchArray;
-	} 
-	else {
-		$output['data']['mixed']['matches'][] = $matchArray;
-	}
+  if ($gender) {
+    $output['data'][$gender][$matchType]['matches'][] = $matchArray;
+  } 
+  else {
+    $output['data']['mixed']['matches'][] = $matchArray;
+  }
 }
 
 //
