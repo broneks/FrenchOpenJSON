@@ -2,16 +2,17 @@
 
 include 'parse.php';
 
-$day = 1;
-$writePath  = 'data/2015/';
-$filePrefix = 'q';
+$day          = 1;
+$isTournament = false;
+$writePath    = 'data/2015/';
+$filePrefix   = 'q';
 
 //
 // Load Document
 //
 
 $doc = new DOMDocument();
-@$doc->loadHTMLFile('http://www.rolandgarros.com/en_FR/scores/completed_matches/day' . $day . '.html');
+@$doc->loadHTMLFile('http://www.rolandgarros.com/en_FR/scores/completed_matches/day' . ($isTournament ? $day + 5 : $day) . '.html');
 
 $finder = new DOMXPath($doc);
 
@@ -49,19 +50,21 @@ foreach ($events as $event) {
 
   $count = Parse::countEvents($count, $event);
 
-  if (!$womSinRound && (strpos($event->textContent, 'Women\'s Singles') !== false)) {
+  $eventSummary = $event->textContent;
+
+  if (!$womSinRound && Parse::isMatchType($eventSummary, 'womSin')) {
     $womSinRound = Parse::getRound($event);
   } 
-  else if (!$womDubRound && (strpos($event->textContent, 'Women\'s Doubles') !== false)) {
+  else if (!$womDubRound && Parse::isMatchType($eventSummary, 'womDub')) {
     $womDubRound = Parse::getRound($event);
   }
-  else if (!$menSinRound && (strpos($event->textContent, 'Men\'s Singles') !== false)) {
+  else if (!$menSinRound && Parse::isMatchType($eventSummary, 'menSin')) {
     $menSinRound = Parse::getRound($event);
   }
-  else if (!$menDubRound && (strpos($event->textContent, 'Men\'s Doubles') !== false)) {
+  else if (!$menDubRound && Parse::isMatchType($eventSummary, 'menDub')) {
     $menDubRound = Parse::getRound($event);
   }
-  else if (!$mixedRound && (strpos($event->textContent, 'Mixed') !== false)) {;
+  else if (!$mixedRound && Parse::isMatchType($eventSummary, 'mixed')) {;
     $mixedRound = Parse::getRound($event);
   }
 }
