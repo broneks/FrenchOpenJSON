@@ -2,10 +2,10 @@
 
 include 'parse.php';
 
-$day          = 1;
+$day          = 2;
 $isTournament = false;
 $writePath    = 'data/2015/';
-$filePrefix   = 'q';
+$filePrefix   = $isTournament ? 'day' : 'q';
 
 //
 // Load Document
@@ -44,13 +44,13 @@ $output = array();
 //
 
 foreach ($events as $event) {
+  $eventSummary = $event->textContent;
+  
+  $count = Parse::countEvents($count, $event);
+
   if (!$eventType) {
     $eventType = Parse::getEventType($event);
   }
-
-  $count = Parse::countEvents($count, $event);
-
-  $eventSummary = $event->textContent;
 
   if (!$womSinRound && Parse::isMatchType($eventSummary, 'womSin')) {
     $womSinRound = Parse::getRound($event);

@@ -54,10 +54,10 @@ class Parse {
   }
 
   private static function getBasicMatchInfo($node) {
-    $matchNode = $node->childNodes->item(1)->childNodes->item(0)->childNodes;
+    $matchNode = $node->childNodes->item(1)->firstChild->childNodes;
     
-    $court  = $node->childNodes->item(0)->childNodes->item(0)->textContent;
-    $status = $matchNode->item(1)->childNodes->item(0)->textContent;
+    $court  = $node->firstChild->firstChild->textContent;
+    $status = $matchNode->item(1)->firstChild->textContent;
     $status = $status === 'Complete' ? 'Completed' : $status;
 
     $side1  = $matchNode->item(0)->childNodes;
@@ -84,8 +84,8 @@ class Parse {
     $sets = array();
 
     for ($i = 3; $i < 8; $i++) {
-      $side1Score = $side1->item($i)->childNodes->item(0)->textContent;
-      $side2Score = $side2->item($i)->childNodes->item(0)->textContent;
+      $side1Score = $side1->item($i)->firstChild->textContent;
+      $side2Score = $side2->item($i)->firstChild->textContent;
       
       // no more sets
       if ($side1Score === '' && $side2Score === '') break;
