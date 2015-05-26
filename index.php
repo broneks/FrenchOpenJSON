@@ -3,7 +3,7 @@
 include 'parse.php';
 
 $day          = 2;
-$isTournament = false;
+$isTournament = true;
 $writePath    = 'data/2015/';
 $filePrefix   = $isTournament ? 'day' : 'q';
 
@@ -45,7 +45,7 @@ $output = array();
 
 foreach ($events as $event) {
   $eventSummary = $event->textContent;
-  
+
   $count = Parse::countEvents($count, $event);
 
   if (!$eventType) {
@@ -54,7 +54,7 @@ foreach ($events as $event) {
 
   if (!$womSinRound && Parse::isMatchType($eventSummary, 'womSin')) {
     $womSinRound = Parse::getRound($event);
-  } 
+  }
   else if (!$womDubRound && Parse::isMatchType($eventSummary, 'womDub')) {
     $womDubRound = Parse::getRound($event);
   }
@@ -106,24 +106,24 @@ foreach ($tables as $table) {
     $gender    = 'womens';
     $matchType = 'singles';
     $match     = Parse::getSingle($table);
-  }  
+  }
   else if (Parse::isMatchType($matchSummary, 'womDub')) {
     $gender    = 'womens';
     $matchType = 'doubles';
     $match     = Parse::getDouble($table);
-  }  
+  }
   else if (Parse::isMatchType($matchSummary, 'menSin')) {
     $gender    = 'mens';
-    $matchType = 'singles'; 
+    $matchType = 'singles';
     $match     = Parse::getSingle($table);
-  }  
+  }
   else if (Parse::isMatchType($matchSummary, 'menDub')) {
     $gender    = 'mens';
     $matchType = 'doubles';
     $match     = Parse::getDouble($table);
-  }  
+  }
   else if (Parse::isMatchType($matchSummary, 'mixed')) {
-    $matchType = 'mixed'; 
+    $matchType = 'mixed';
     $match     = Parse::getDouble($table);
   }
 
@@ -137,7 +137,7 @@ foreach ($tables as $table) {
 
   if ($gender) {
     $output['data'][$gender][$matchType]['matches'][] = $matchArray;
-  } 
+  }
   else {
     $output['data']['mixed']['matches'][] = $matchArray;
   }
