@@ -2,7 +2,7 @@
 
 include 'parse.php';
 
-$day          = 2;
+$day          = 14;
 $isTournament = true;
 $writePath    = 'data/2015/';
 $filePrefix   = $isTournament ? 'day' : 'q';
@@ -100,7 +100,7 @@ $output['data'] = array(
 );
 
 foreach ($tables as $table) {
-  $matchSummary = $table->firstChild->textContent;
+  $matchSummary = $table->firstChild->childNodes->item(1)->textContent;
 
   if (Parse::isMatchType($matchSummary, 'womSin')) {
     $gender    = 'womens';
@@ -126,20 +126,36 @@ foreach ($tables as $table) {
     $matchType = 'mixed';
     $match     = Parse::getDouble($table);
   }
+  else {
+    // not a valid match type
+    continue;
+  }
 
-  $matchArray = array(
-    'status' => $match['status'],
-    'court'  => $match['court'],
-    'winner' => $match['winner'],
-    'loser'  => $match['loser'],
-    'sets'   => $match['sets']
-  );
-
-  if ($gender) {
-    $output['data'][$gender][$matchType]['matches'][] = $matchArray;
+  if ($matchType == 'doubles' || $matchType == 'mixed') {
+    $matchArray = array(
+      'status'  => $match['status'],
+      'court'   => $match['court'],
+      'winners' => $match['winners'],
+      'losers'  => $match['losers'],
+      'sets'    => $match['sets']
+    );
   }
   else {
+    $matchArray = array(
+      'status' => $match['status'],
+      'court'  => $match['court'],
+      'winner' => $match['winner'],
+      'loser'  => $match['loser'],
+      'sets'   => $match['sets']
+    );
+  }
+
+
+  if ($matchType == 'mixed') {
     $output['data']['mixed']['matches'][] = $matchArray;
+  }
+  else {
+    $output['data'][$gender][$matchType]['matches'][] = $matchArray;
   }
 }
 

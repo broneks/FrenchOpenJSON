@@ -1,12 +1,12 @@
 <?php
 
 class Parse {
-  private static $types = array(
+  private static $matchTypes = array(
     "womSin" => "Women's Singles",
     "womDub" => "Women's Doubles",
     "menSin" => "Men's Singles",
     "menDub" => "Men's Doubles",
-    "mixed"  => "Mixed"
+    "mixed"  => "Mixed Doubles"
   );
 
   //
@@ -23,7 +23,7 @@ class Parse {
 
   public static function countEvents($count, $event) {
     $eventText = $event->textContent;
-    $types     = array_values(self::$types);
+    $types     = array_values(self::$matchTypes);
 
     foreach ($types as $type) {
       if (strpos($eventText, $type) !== false) {
@@ -38,165 +38,149 @@ class Parse {
     $dash  = strpos($event->textContent, '-');
     $round = substr($event->textContent, $dash + 2);
 
-    return $round;
+    return trim($round);
   }
 
   //
   // Match Info
   //
 
-  private static function getName($side) {
-    return $side->item(0)->getElementsByTagName('a')->item(0)->textContent;
+  private static function getName($side, $index = 0) {
+    return $side->item(0)->getElementsByTagName('a')->item($index)->textContent;
   }
 
-  private static function getCountry($side) {
-    return substr($side->item(0)->getElementsByTagName('span')->item(0)->textContent, 1, 3);
+  private static function getCountry($side, $index = 0) {
+    return substr($side->item(0)->getElementsByTagName('span')->item($index)->textContent, 1, 3);
   }
 
-  private static function getBasicMatchInfo($node) {
+  private static function getMatchBase($node) {
     $matchNode = $node->childNodes->item(1)->firstChild->childNodes;
-    
+
     $court  = $node->firstChild->firstChild->textContent;
     $status = $matchNode->item(1)->firstChild->textContent;
     $status = $status === 'Complete' ? 'Completed' : $status;
 
-    $side1  = $matchNode->item(0)->childNodes;
-    $side2  = $matchNode->item(2)->childNodes;
+    $sideOne  = $matchNode->item(0)->childNodes;
+    $sideTwo  = $matchNode->item(2)->childNodes;
 
     return array(
-      'court'  => $court,
-      'status' => $status,
-      'side1'  => $side1,
-      'side2'  => $side2,
-      'sets'   => array()
+      'court'   => $court,
+      'status'  => $status,
+      'sideOne' => $sideOne,
+      'sideTwo' => $sideTwo,
+      'sets'    => array()
     );
+  }
+
+  private static function getMatchInfo($node, $match, $sideOne, $sideTwo, $isDoubles = false) {
+    $sides = array();
+
+    $terms = array(
+      'win'  => $isDoubles ? 'winners' : 'winner',
+      'loss' => $isDoubles ? 'losers'  : 'loser'
+    );
+
+    if (self::isWinner($match['sideOne']->item(1)->getAttribute('class'))) {
+      $sideOneWin = true;
+      $sides[$terms['win']]  = $sideOne;
+      $sides[$terms['loss']] = $sideTwo;
+    }
+    else {
+      $sideOneWin = false;
+      $sides[$terms['win']]  = $sideTwo;
+      $sides[$terms['loss']] = $sideOne;
+    }
+
+    $sides['sets'] = self::getSets($sideOneWin, $match['sideOne'], $match['sideTwo']);
+
+    return array_merge($match, $sides);
   }
 
   private static function formatScore($score) {
     if (strlen($score) > 1) {
-      return substr($score, 0, 1) . '(' . substr($score, 1) . ')';
+      $super = substr($score, 1);
+
+      if (is_numeric($super)) {
+        return substr($score, 0, 1) . '(' . $super . ')';
+      }
     }
 
     return $score;
   }
 
-  private static function getSets($side1Win, $side1, $side2) {
+  private static function getSets($sideOneWin, $sideOne, $sideTwo) {
     $sets = array();
 
     for ($i = 3; $i < 8; $i++) {
-      $side1Score = $side1->item($i)->firstChild->textContent;
-      $side2Score = $side2->item($i)->firstChild->textContent;
-      
+      $sideOneScore = $sideOne->item($i)->firstChild->textContent;
+      $sideTwoScore = $sideTwo->item($i)->firstChild->textContent;
+
       // no more sets
-      if ($side1Score === '' && $side2Score === '') break;
+      if ($sideOneScore === '' && $sideTwoScore === '') break;
 
-      $side1Score = self::formatScore($side1Score);
-      $side2Score = self::formatScore($side2Score);
+      $sideOneScore = self::formatScore($sideOneScore);
+      $sideTwoScore = self::formatScore($sideTwoScore);
 
-      if ($side1Win) {
-        $sets[] = array($side1Score, $side2Score);
-      } 
+      if ($sideOneWin) {
+        $sets[] = array($sideOneScore, $sideTwoScore);
+      }
       else {
-        $sets[] = array($side2Score, $side1Score);
+        $sets[] = array($sideTwoScore, $sideOneScore);
       }
     }
 
     return $sets;
   }
 
+  private static function isWinner($text) {
+    return strpos($text, 'winner') !== false;
+  }
+
   public static function isMatchType($text, $key) {
-    return strpos($text, self::$types[$key]) !== false;
+    $type = split(' - ', $text)[0];
+
+    return $type == self::$matchTypes[$key];
   }
 
   public static function getSingle($node) {
-    $match = self::getBasicMatchInfo($node);
-    $sides = array();
+    $match = self::getMatchBase($node);
 
-    if (strpos($match['side1']->item(1)->getAttribute('class'), 'winner') !== false) {
-      $side1Win = true;
+    $sideOne = array(
+      'name'    => self::getName($match['sideOne']),
+      'country' => self::getCountry($match['sideOne'])
+    );
+    $sideTwo = array(
+      'name'    => self::getName($match['sideTwo']),
+      'country' => self::getCountry($match['sideTwo'])
+    );
 
-      $sides['winner'] = array(
-        'name'    => self::getName($match['side1']),
-        'country' => self::getCountry($match['side1'])
-      );
-      $sides['loser'] = array(
-        'name'    => self::getName($match['side2']),
-        'country' => self::getCountry($match['side2'])
-      );
-    } 
-    else {
-      $side1Win = false;
-
-      $sides['winner'] = array(
-        'name'    => self::getName($match['side2']),
-        'country' => self::getCountry($match['side2'])
-      );
-      $sides['loser']  = array(
-        'name'    => self::getName($match['side1']),
-        'country' => self::getCountry($match['side1'])
-      );
-    }
-
-    $sides['sets'] = self::getSets($side1Win, $match['side1'], $match['side2']);
-
-    return array_merge($match, $sides);
+    return self::getMatchInfo($node, $match, $sideOne, $sideTwo);
   }
 
   public static function getDouble($node) {
-    //
-    // TO BE COMPLETED
-    //
+    $match = self::getMatchBase($node);
 
+    $sideOne = array(
+      'names' => array(
+        self::getName($match['sideOne']),
+        self::getName($match['sideOne'], 1)
+      ),
+      'countries' => array(
+        self::getCountry($match['sideOne']),
+        self::getCountry($match['sideOne'], 1)
+      )
+    );
+    $sideTwo = array(
+      'names' => array(
+        self::getName($match['sideTwo']),
+        self::getName($match['sideTwo'], 1)
+      ),
+      'countries' => array(
+        self::getCountry($match['sideTwo']),
+        self::getCountry($match['sideTwo'], 1)
+      )
+    );
 
-    // $match = self::getBasicMatchInfo($node);
-    // $sides = array();
-
-    // if (strpos($match['side1']->item(1)->getAttribute('class'), 'winner') !== false) {
-    //  $t1win = true;
-
-    //  $winners = array(
-    //    'names' => array(
-    //      $team1->item(0)->getElementsByTagName('a')->item(0)->textContent,
-    //      $team1->item(0)->getElementsByTagName('a')->item(1)->textContent
-    //    ),
-    //    'countries' => array(
-    //      substr($team1->item(0)->getElementsByTagName('span')->item(0)->textContent, 1, 3),
-    //      substr($team1->item(0)->getElementsByTagName('span')->item(1)->textContent, 1, 3)
-    //    )
-    //  );
-
-    //  $losers = array(
-    //    'names' => array(
-    //      $team2->item(0)->getElementsByTagName('a')->item(0)->textContent,
-    //      $team2->item(0)->getElementsByTagName('a')->item(1)->textContent
-    //    ),
-    //    'countries' => array(
-    //      substr($team2->item(0)->getElementsByTagName('span')->item(0)->textContent, 1, 3),
-    //      substr($team2->item(0)->getElementsByTagName('span')->item(1)->textContent, 1, 3)
-    //    )
-    //  );
-    // } else {
-    //  $winners = array(
-    //    'names' => array(
-    //      $team2->item(0)->getElementsByTagName('a')->item(0)->textContent,
-    //      $team2->item(0)->getElementsByTagName('a')->item(1)->textContent
-    //    ),
-    //    'countries' => array(
-    //      substr($team2->item(0)->getElementsByTagName('span')->item(0)->textContent, 1, 3),
-    //      substr($team2->item(0)->getElementsByTagName('span')->item(1)->textContent, 1, 3)
-    //    )
-    //  );
-
-    //  $losers = array(
-    //    'names' => array(
-    //      $team1->item(0)->getElementsByTagName('a')->item(0)->textContent,
-    //      $team1->item(0)->getElementsByTagName('a')->item(1)->textContent
-    //    ),
-    //    'countries' => array(
-    //      substr($team1->item(0)->getElementsByTagName('span')->item(0)->textContent, 1, 3),
-    //      substr($team1->item(0)->getElementsByTagName('span')->item(1)->textContent, 1, 3)
-    //    )
-    //  );
-    // }
+    return self::getMatchInfo($node, $match, $sideOne, $sideTwo, true);
   }
 }
