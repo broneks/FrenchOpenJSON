@@ -2,7 +2,7 @@
 
 include 'parse.php';
 
-$day          = 14;
+$day          = 15;
 $isTournament = true;
 $writePath    = 'data/2015/';
 $filePrefix   = $isTournament ? 'day' : 'q';
